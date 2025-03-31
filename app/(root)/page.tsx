@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import InterviewCard from "@/components/InterviewCard";
 
-import { getCurrentUser } from "@/lib/actions/auth.action";
+import { getCurrentUser, signOut } from "@/lib/actions/auth.action";
 import {
   getInterviewsByUserId,
   getLatestInterviews,
@@ -23,9 +23,17 @@ async function Home() {
 
   return (
     <>
+        {user && (
+          <Button
+            onClick={signOut}
+            className="btn-primary px-4 py-2 rounded-lg absolute top-10 right-25"
+          >
+            Sign Out
+          </Button>
+        )}
       <section className="card-cta">
         <div className="flex flex-col gap-6 max-w-lg">
-          <h2>Get Interview-Ready with AI-Powered Practice & Feedback</h2>
+          <h2>Get Interview-Ready: Practice, Analyze, and Improve with AI</h2>
           <p className="text-lg">
             Practice real interview questions & get instant feedback
           </p>
@@ -42,6 +50,8 @@ async function Home() {
           height={400}
           className="max-sm:hidden"
         />
+
+        
       </section>
 
       <section className="flex flex-col gap-6 mt-8">
