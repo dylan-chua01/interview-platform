@@ -26,7 +26,7 @@ async function Home() {
         {user && (
           <Button
             onClick={signOut}
-            className="btn-primary px-4 py-2 rounded-lg absolute top-10 right-25"
+            className="btn-primary px-4 py-2 rounded-lg absolute top-18 right-75"
           >
             Sign Out
           </Button>

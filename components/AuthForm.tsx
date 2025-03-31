@@ -91,12 +91,13 @@ const AuthForm = ({ type }: { type: FormType }) => {
     <div className="card-border lg:min-w-[566px]">
       <div className="flex flex-col gap-6 card py-14 px-10">
         <div className="flex flex-row gap-2 justify-center">
-          <Image src="/logo.svg" alt="logo" height={32} width={38}/>
+          <Image src="/logo2.png" alt="logo" height={32} width={38}/>
           <h2 className="text-primary-100">PrepMate</h2>
         </div>
 
-        <h3>Ace your job interview with AI</h3>
+        <h3 className="text-dark-100 text-center">Ace your job interview with AI</h3>
 
+      <div className="text-dark-100">
         <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 mt-4 form">
                 {!isSignIn && (
@@ -112,20 +113,22 @@ const AuthForm = ({ type }: { type: FormType }) => {
                     name="email" 
                     label="Email" 
                     placeholder="Your Email Address"
-                    type="email" />
+                    type="email"
+                    />
 
                <FormField 
                     control={form.control} 
                     name="password" 
                     label="Password" 
                     placeholder="Enter your Password"
-                    type="password" />
+                    type="password"
+                    />
                
                 <Button className="btn" type="submit">{isSignIn ? 'Sign in' : 'Create an Account'}</Button>
               </form>
             </Form>
-
-            <p className="text-center">
+            </div>
+            <p className="text-center text-dark-100">
               {isSignIn ? 'No account yet?' : 'Have an account already?'}
               <Link href={!isSignIn ? '/sign-in' : '/sign-up'} className="font-bold text-user-primary ml-1">
                 {!isSignIn ? "Sign in" : "Sign up"}
