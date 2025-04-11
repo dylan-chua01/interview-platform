@@ -1,0 +1,10 @@
+[lcl-host]
+realm-apid = 'localhost'
+
+[org]
+apid = 'dylan-chua01'
+
+[service]
+apid = 'interview'
+category = 'javascript'
+cert-style = 'acme'

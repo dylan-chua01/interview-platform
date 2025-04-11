@@ -5,7 +5,7 @@ import { db } from "@/firebase/admin";
 import { getRandomInterviewCover } from "@/lib/utils";
 
 export async function POST(request: Request) {
-  const { type, role, level, techstack, amount, userid } = await request.json();
+  const { type, role, company, level, techstack, amount, userid } = await request.json();
 
   try {
     const { text: questions } = await generateText({
@@ -13,6 +13,7 @@ export async function POST(request: Request) {
       prompt: `Prepare questions for a job interview.
         The job role is ${role}.
         The job experience level is ${level}.
+        The focus of questions should be aimed towards ${company}.
         The tech stack used in the job is: ${techstack}.
         The focus between behavioural and technical questions should lean towards: ${type}.
         The amount of questions required is: ${amount}.
@@ -29,6 +30,7 @@ export async function POST(request: Request) {
       role: role,
       type: type,
       level: level,
+      company: company,
       techstack: techstack.split(","),
       questions: JSON.parse(questions),
       userId: userid,

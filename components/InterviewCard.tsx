@@ -14,15 +14,16 @@ const InterviewCard = async ({
   role,
   type,
   techstack,
+  company,
   createdAt,
-}: InterviewCardProps) => {
-  const feedback =
-    userId && interviewId
-      ? await getFeedbackByInterviewId({
-          interviewId,
-          userId,
-        })
-      : null;
+  isUntaken = false, // New prop
+}: InterviewCardProps & { isUntaken?: boolean }) => {
+  const feedback = !isUntaken && userId && interviewId
+    ? await getFeedbackByInterviewId({
+        interviewId,
+        userId,
+      })
+    : null;
 
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
 
@@ -62,6 +63,8 @@ const InterviewCard = async ({
 
           {/* Interview Role */}
           <h3 className="mt-5 capitalize text-dark-100">{role} Interview</h3>
+
+          <h4 className="text-dark-300 text-sm mt-2">{company}</h4>
 
           {/* Date & Score */}
           <div className="flex flex-row gap-5 mt-3 text-dark-100">

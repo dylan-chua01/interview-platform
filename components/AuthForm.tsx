@@ -49,6 +49,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
             name: name!,
             email,
             password,
+            plan: "free" 
           })
 
           if(!result?.success) {

@@ -210,6 +210,7 @@ export const dummyInterviews: Interview[] = [
     userId: "user1",
     role: "Frontend Developer",
     type: "Technical",
+    company: "adobe",
     techstack: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     level: "Junior",
     questions: ["What is React?"],
@@ -220,6 +221,7 @@ export const dummyInterviews: Interview[] = [
     id: "2",
     userId: "user1",
     role: "Full Stack Developer",
+    company: "adobe",
     type: "Mixed",
     techstack: ["Node.js", "Express", "MongoDB", "React"],
     level: "Senior",
@@ -227,4 +229,19 @@ export const dummyInterviews: Interview[] = [
     finalized: false,
     createdAt: "2024-03-14T15:30:00Z",
   },
+];
+
+export const NAV_LINKS = [
+  { href: '/home', key: 'about', label: 'About' },
+  { href: '/pricing', key: 'pricing', label: 'Pricing' },
+  { href: '/contact', key: 'contact_us', label: 'Contact Us' },
+  {
+    key: 'the_start',
+    label: 'Resources',
+    sublinks: [
+      { href: '/start', label: 'The Start' },
+      { href: '/donate', label: 'Support Us' },
+      { href: '/coaching', label: 'Coaching Services' }
+    ]
+  }
 ];

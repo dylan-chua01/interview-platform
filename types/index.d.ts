@@ -14,9 +14,11 @@ interface Feedback {
 }
 
 interface Interview {
+  company: string | undefined;
   id: string;
   role: string;
   level: string;
+  company: string;
   questions: string[];
   techstack: string[];
   createdAt: string;
@@ -36,10 +38,14 @@ interface User {
   name: string;
   email: string;
   id: string;
+  plan: "free" | "advanced" | "pro";
+  stripeCustomerId?: string;
+  currentPeriodEnd?: Date;
 }
 
 interface InterviewCardProps {
   interviewId?: string;
+  company: string;
   userId?: string;
   role: string;
   type: string;
@@ -81,6 +87,7 @@ interface SignUpParams {
   name: string;
   email: string;
   password: string;
+  plan: "free" | "advanced" | "pro";
 }
 
 type FormType = "sign-in" | "sign-up";
@@ -89,6 +96,7 @@ interface InterviewFormProps {
   interviewId: string;
   role: string;
   level: string;
+  company: string;
   type: string;
   techstack: string[];
   amount: number;

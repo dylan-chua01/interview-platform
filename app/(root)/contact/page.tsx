@@ -48,7 +48,7 @@ const ContactPage = () => {
                 Your message has been sent! We'll get back to you soon.
               </p>
               <Button
-                onClick={() => router.push("/")}
+                onClick={() => router.push("/home")}
                 className="btn-secondary px-8 py-3 text-lg"
               >
                 Back to Home

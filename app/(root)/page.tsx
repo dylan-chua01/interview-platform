@@ -66,9 +66,9 @@ async function Home() {
                 interviewId={interview.id}
                 role={interview.role}
                 type={interview.type}
+
                 techstack={interview.techstack}
-                createdAt={interview.createdAt}
-              />
+                createdAt={interview.createdAt} company={""}              />
             ))
           ) : (
             <p>You haven&apos;t taken any interviews yet</p>
@@ -89,8 +89,7 @@ async function Home() {
                 role={interview.role}
                 type={interview.type}
                 techstack={interview.techstack}
-                createdAt={interview.createdAt}
-              />
+                createdAt={interview.createdAt} company={""}              />
             ))
           ) : (
             <p>There are no interviews available</p>
